@@ -11,13 +11,26 @@ class MainController extends Controller
         return view("home");
     }
 
-    public function register()
+    public function reg()
     {
-        return view("register");
+        return view("reg");
     }
 
     public function homepage()
     {
         return view("homepage");
     }
+    public function newsert()
+    {
+        return view("newsert");
+    }
+    public function profile()
+    {
+        return view("profile");
+    }
+    public function aut()
+    {
+        return view("aut");
+    }
+
 }

@@ -19,4 +19,11 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/', [MainController::class, 'homepage']);
-Route::get('/register', [MainController::class, 'register']);
+Route::get('/reg', [MainController::class, 'reg']);
+Route::get('/newsert', [MainController::class, 'newsert']);
+Route::get('/profile', [MainController::class, 'profile']);
+Route::get('/aut', [MainController::class, 'aut']);
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

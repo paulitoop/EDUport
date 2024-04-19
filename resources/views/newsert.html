@@ -1,0 +1,114 @@
+<html>
+<style>
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   color: #333;
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px;
+   background-color: #fff;
+}
+
+.logo {
+   font-size: 2em;
+   color: #333;
+}
+
+.account {
+   display: flex;
+   align-items: center;
+}
+
+.account a {
+   margin-left: 10px;
+   color: #fff;
+   text-decoration: none;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+}
+
+.account a.active {
+   background-color: #333;
+}
+
+.info {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #f0f0f0;
+   border-radius: 10px;
+}
+
+.info form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.info input, .info textarea {
+   width: 100%;
+   margin-bottom: 20px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+}
+
+.info input[type="submit"] {
+   background-color: #333;
+   color: #fff;
+   cursor: pointer;
+}
+
+.help {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px;
+   text-align: center;
+}
+
+.help a {
+   display: block;
+   margin-bottom: 10px;
+   color: #333;
+   text-decoration: none;
+   font-size: 1.2em;
+}
+</style>
+<body>
+   <header>
+       <div class="logo">new dost</div>
+       <div class="account">
+           <a href="#" class="active">Account</a>
+           <a href="#">Sign In</a>
+       </div>
+   </header>
+   <section class="info">
+       <form>
+           <h2>info</h2>
+           <input type="text" placeholder="name">
+           <input type="text" placeholder="organization">
+           <input type="text" placeholder="opisani">
+           <input type="text" placeholder="napravljenie">
+           <select>
+               <option value="">slognost</option>
+               <option value="">slognost 1</option>
+               <option value="">slognost 2</option>
+           </select>
+           <input type="file" accept="image/*">
+           <input type="submit" value="confirm">
+       </form>
+   </section>
+   <section class="help">
+       <h2>Help</h2>
+       <a href="#">FAQs</a>
+       <a href="#">Contact</a>
+   </section>
+</body>
+</html>
