@@ -76,7 +76,7 @@ footer a {
          @csrf
 
          <div class="row mb-3">
-             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Адрес Email') }}</label>
 
              <div class="col-md-6">
                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -90,7 +90,7 @@ footer a {
          </div>
 
          <div class="row mb-3">
-             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Пароль') }}</label>
 
              <div class="col-md-6">
                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -109,7 +109,7 @@ footer a {
                      <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                      <label class="form-check-label" for="remember">
-                         {{ __('Remember Me') }}
+                         {{ __('Запомнить') }}
                      </label>
                  </div>
              </div>
@@ -118,12 +118,12 @@ footer a {
          <div class="row mb-0">
              <div class="col-md-8 offset-md-4">
                  <button type="submit" class="btn btn-primary">
-                     {{ __('Login') }}
+                     {{ __('Войти') }}
                  </button>
 
                  @if (Route::has('password.request'))
                      <a class="btn btn-link" href="{{ route('password.request') }}">
-                         {{ __('Forgot Your Password?') }}
+                         {{ __('Забыли пароль?') }}
                      </a>
                  @endif
              </div>
@@ -137,11 +137,11 @@ footer a {
        </form> -->
    </main>
    <footer>
-       <a href="http://inport.stud/">Home</a>
-       <a href="#">All Rights Reserved.</a>
-       <a href="#">Terms of Service</a>
-       <a href="#">Privacy Policy</a>
-       <a href="#">Support</a>
+       <a href="http://inport.stud/">Главная</a>
+       <a href="#">Все права соблюдены</a>
+       <a href="#">Политика использования</a>
+       <a href="#">Политика приватности</a>
+       <a href="#">Поддержка</a>
    </footer>
 </body>
 </html>
