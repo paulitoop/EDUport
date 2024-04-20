@@ -118,12 +118,6 @@ body {
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
-           <?php
-               $url = "https://favqs.com/api/qotd";
-               $ch = curl_init();
-               $curl_setops($ch)
-
-           ?>
            <h2>Цитата дня - {{}}</h1>
        </div>
        <div class="content">
