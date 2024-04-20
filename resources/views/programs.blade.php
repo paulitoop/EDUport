@@ -35,6 +35,16 @@ header {
    font-size: 24px;
    font-weight: bold;
    
+   
+}
+.logo a{
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+   color: #562664;
+   
 }
 
 .user-info {
@@ -115,10 +125,7 @@ header {
    margin-bottom: 10px;
 }
 
-.grid-item a:hover {
-   color: #562664;
-   
-}
+
 
 footer {
    background-color: #fff;
@@ -176,7 +183,8 @@ footer {
 <body>
    <div class="container">
        <header>
-           <a style = "text-decoration: none;" href = "/"><div class="logo" >⚛️ Программы Цифровой Кафедры</div></a>
+
+           <div class="logo" ><a href = "/">⚛️ Программы Цифровой Кафедры</a></div>
            <div class="user-info">
                <ul class="navbar-nav ms-auto">
                   
