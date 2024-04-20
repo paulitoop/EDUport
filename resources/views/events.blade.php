@@ -204,28 +204,42 @@ footer {
             </div>
        </div>
        <div>
-        <?php
-        // Считываем содержимое JSON файла
-        $json_data = file_get_contents('eventData.json');
-        
-        // Декодируем JSON данные в массив PHP
-        $data = json_decode($json_data, true);
-        
-        // Проверяем, удалось ли декодировать JSON
-        if ($data !== null) {
-            // Перебираем каждое мероприятие
-            foreach ($data['results'] as $event) {
-                // Выводим информацию о мероприятии
-                echo '<div class="event">';
-                echo '<h2>' . $event['title'] . '</h2>';
-                echo '<p>' . $event['description'] . '</p>';
-                echo '<a href="' . $event['site_url'] . '">Подробнее</a>';
-                echo '</div>';
+         <?php
+// Задаем URL для GET запроса
+$date = time();
+// echo $date;
+$url = 'https://spb-afisha.gate.petersburg.ru/kg/external/afisha/events/?categories=education&fields=dates,title,place,description,site_url&actual_since='. $date;
+
+// Получаем JSON данные из GET запроса
+$json_data = file_get_contents($url);
+
+// Декодируем JSON данные в массив PHP
+$data = json_decode($json_data, true);
+
+// Проверяем, удалось ли декодировать JSON
+if ($data !== null) {
+    // Перебираем каждое мероприятие
+    foreach ($data['data'] as $event) {
+        // Выводим информацию о мероприятии
+        echo '<div class="event">';
+        echo '<h2>' . $event['title'] . '</h2>';
+        echo '<p>' . $event['description'] . '</p>';
+      //   if (isset($event['place']) && isset($event['place']['id'])) {
+      //       echo '<p>Место проведения: ' . $event['place']['id'] . '</p>';
+      //   }
+        if (isset($event['dates'])) {
+            echo '<p>Дата начала: ' . date('Y-m-d H:i:s', $event['dates'][0]['start']) . '</p>';
+            if (count($event['dates']) > 1) {
+                echo '<p>Дата окончания: ' . date('Y-m-d H:i:s', $event['dates'][1]['end']) . '</p>';
             }
-        } else {
-            echo 'Ошибка чтения данных';
         }
-        ?>
+        echo '<a href="' . $event['site_url'] . '">Подробнее</a>';
+        echo '</div>';
+    }
+} else {
+    echo 'Ошибка чтения данных';
+}
+?>
        </div>
        <footer>
            <div class="footer-item">
