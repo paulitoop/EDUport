@@ -149,11 +149,23 @@ footer {
     padding: 10px; /* Поля внутри контейнера */
     border-radius: 10px; /* Закругление углов контейнера */
     background-color: #f9f9f9; /* Цвет фона контейнера */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    box-shadow: 0 0 5px rgba(135, 206, 250, 10); /* Тень для контейнера */
+    position: relative;
+ 
+}
+.item-container:hover{
+    transition: 0.5s;
+    box-shadow: 40px 10px 10px rgba(135, 206, 250, 30);; /* make this whatever you want */
+    margin-bottom: 15px; /* Отступ между контейнерами */
+    margin-top: 15px; /* Отступ между контейнерами */
 }
 .item {
     margin-right: 10px; /* Отступ между элементами внутри контейнера */
-    display: inline-block; /* Размещение элементов внутри контейнера в строку */
+    margin-bottom: 10px; /* Отступ между контейнерами */
+    padding: 10px; /* Поля внутри контейнера */
+    border: 1px solid rgba(119, 136, 153); /* Граница для разделения контейнеров */
+    border-radius: 10px;
+    /* display: inline-block; Размещение элементов внутри контейнера в строку */
     
 }
 </style>
@@ -300,11 +312,6 @@ footer {
                     echo '</div>';
             }
            
-            
-           
-            // foreach($data as $row){
-            // echo "<h>".implode(' ',$row)."</h>";
-            // }
                 ?>
         </div>
        <footer>
