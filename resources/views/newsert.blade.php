@@ -102,17 +102,22 @@ footer {
 </style>
 <body>
    <header>
-       <div class="logo">Добавить достижение</div>
+       <div class="logo">Добавить сертификат</div>
        
    </header>
    <section class="info">
+<form action="upload_image.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" />
+    <button type="submit" name="submit">Сохранить изображение</button>
+</form>
        <form>
-           <h2>Информация о достижении</h2>
+         
+           <h2>Информация о сертификате</h2>
            <input type="text" placeholder="Название мероприятия">
            <input type="text" placeholder="Организация">
            <input type="text" placeholder="Описание">
            <input type="file" accept="image/*">
-           <input type="submit" value="Подтвердить">
+           <button type="submit" name="submit">Сохранить изображение</button>
        </form>
    </section>
    <footer>
