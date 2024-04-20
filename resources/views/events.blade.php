@@ -142,6 +142,12 @@ footer {
    color: #666;
    font-size: 14px;
 }
+
+.event {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
 </style>
 <head>
 
@@ -193,10 +199,33 @@ footer {
        <div class="banner">
             <div class="banner-text">
                <h1>EduPort</h1>
-               <p>Твоё идеальное портфолио</p>
+               <p>Твои персональные мероприятия</p>
             </div>
        </div>
-       
+       <div>
+        <?php
+        // Считываем содержимое JSON файла
+        $json_data = file_get_contents('eventData.json');
+        
+        // Декодируем JSON данные в массив PHP
+        $data = json_decode($json_data, true);
+        
+        // Проверяем, удалось ли декодировать JSON
+        if ($data !== null) {
+            // Перебираем каждое мероприятие
+            foreach ($data['results'] as $event) {
+                // Выводим информацию о мероприятии
+                echo '<div class="event">';
+                echo '<h2>' . $event['title'] . '</h2>';
+                echo '<p>' . $event['description'] . '</p>';
+                echo '<a href="' . $event['site_url'] . '">Подробнее</a>';
+                echo '</div>';
+            }
+        } else {
+            echo 'Ошибка чтения данных';
+        }
+        ?>
+       </div>
        <footer>
            <div class="footer-item">
                <h3>⚛️ Поддержка</h3>
