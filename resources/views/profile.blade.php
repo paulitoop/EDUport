@@ -148,7 +148,7 @@ body {
                <h2>Персональные данные</h2>
                <p>Обновить профиль</p>
                <p>Редактировать профиль</p>
-               <a href="#">Добавить достижение</a>
+               <a href="/newsert">Добавить достижение</a>
                <h2>Достижения</h2>
                <img src="ach1.png" alt="Achievement 1">
                <img src="ach2.png" alt="Achievement 2">
