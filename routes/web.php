@@ -26,8 +26,8 @@ Route::get('/aut', [MainController::class, 'aut']);
 Route::get('/home', [MainController::class, 'home']);
 // Route::post('/events', [MainController::class, 'events']);
 Route::get('/events', [MainController::class, 'events']);
-Route::get('/programs', [MainController::class, 'programs']);
-
+Route::get('/resume', [MainController::class, 'resume']);
+Route::get('/newsert', [MainController::class, 'newsert']);
 
 Auth::routes();
 

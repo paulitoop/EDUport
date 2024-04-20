@@ -165,12 +165,11 @@ body {
        <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
+       
+       <?php
+               $url = "https://favqs.com/api/qotd";
+               $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
               
-               $ch = curl_init();
-               curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-               curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
-               $json_data = curl_exec($ch);
-               $data = (array) json_decode($json_data, true);
                $ch = curl_init();
                curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
                curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
@@ -204,6 +203,11 @@ body {
 
            
            
+
+            {{-- <h2>Цитата дня - {{$data}}</h1> --}}
+
+           
+           
            <h2 id="quoteText1"></h2>
            <script>
               var category = 'success';
@@ -211,9 +215,12 @@ body {
                   method: 'GET',
                   url: 'https://kudago.com/public-api/v1.2/place-categories/?lang=ru',
                   headers: { 'Access-Control-Allow-Origin': 'http://localhost'},
+                  url: 'https://kudago.com/public-api/v1.2/place-categories/?lang=ru',
+                  headers: { 'Access-Control-Allow-Origin': 'http://localhost'},
                   contentType: 'application/json',
                   success: function(result) {
                       console.log(result);
+                       $('#quoteText1').text(result);
                        $('#quoteText1').text(result);
                   },
                   error: function ajaxError(jqXHR) {
