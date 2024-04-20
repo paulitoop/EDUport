@@ -150,7 +150,7 @@ footer {
 <body>
    <div class="container">
        <header>
-           <div class="logo">⚛️ Программы ЦК</div>
+           <div class="logo">⚛️ Программы_ЦК</div>
            <div class="user-info">
                <ul class="navbar-nav ms-auto">
                   
