@@ -122,7 +122,7 @@ body {
        <div class="content">
            <div class="left-column">
                <h2>Активность</h2>
-               <a href="#">Профиль</a>
+               <a href="/">Главная</a>
                <a href="#">Галерея</a>
                <img src="cert1.png" alt="Profile">
                <img src="cert2.png" alt="Gallery">

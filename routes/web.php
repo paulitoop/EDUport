@@ -23,6 +23,7 @@ Route::get('/register', [MainController::class, 'register']);
 Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/profile', [MainController::class, 'profile']);
 Route::get('/aut', [MainController::class, 'aut']);
+Route::get('/home', [MainController::class, 'home']);
 
 Auth::routes();
 

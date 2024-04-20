@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <style>
 body {
    font-family: Arial, sans-serif;
@@ -41,11 +42,10 @@ header {
    align-items: center;
    position: absolute;
    right: 200px;
+ 
    
    
 }
-
-
 
 .link:hover {
    color: #00B3FF;
@@ -108,6 +108,17 @@ header {
    font-size: 14px;
 }
 
+.grid-item a {
+   text-decoration: none; 
+   color: #333;
+   margin-bottom: 10px;
+}
+
+.grid-item a:hover {
+   color: #562664;
+   
+}
+
 footer {
    background-color: #fff;
    padding: 20px;
@@ -141,8 +152,42 @@ footer {
        <header>
            <div class="logo">⚛️ Главная</div>
            <div class="user-info">
-               <a class="link" href='http://inport.stud/login'>Войти</a>
-               <a class="link" href="http://inport.stud/register">Зарегистрироваться</a>
+               {{-- <a class="link" href='http://inport.stud/login'>Войти</a>
+               <a class="link" href="http://inport.stud/register">Зарегистрироваться</a> --}}
+               <ul class="navbar-nav ms-auto">
+                  <!-- Authentication Links -->
+                  @guest
+                      @if (Route::has('login'))
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
+                          </li>
+                      @endif
+
+                      @if (Route::has('register'))
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегестрироваться') }}</a>
+                          </li>
+                      @endif
+                  @else
+                      <li class="nav-item dropdown">
+                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              {{ Auth::user()->name }}
+                          </a>
+
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                                 onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                  {{ __('Выйти') }}
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                  @csrf
+                              </form>
+                          </div>
+                      </li>
+                  @endguest
+              </ul>
            </div>
        </header>
        <div class="banner">
@@ -167,7 +212,7 @@ footer {
                    <p>Управляйте настройками своей учетной записи.</p>
                </div>
                <div class="grid-item">
-                     <h3>⚛️ Личные данные</h3>
+                     <h3><a href="/profile">⚛️Личный кабинет</a></h3>
                      <p>Обновите свою личную информацию.</p>
                      <p>Просматривайте и редактируйте академические записи</p>
                      <p>Управляйте достижениями и сертификатами</p>

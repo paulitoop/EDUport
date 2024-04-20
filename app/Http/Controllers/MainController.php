@@ -8,7 +8,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        return view("profile");
+        return view("home");
     }
 
     // public function reg()
