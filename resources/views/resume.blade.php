@@ -1,100 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        body {
-           font-family: Arial, sans-serif;
-           margin: 0;
-           padding: 0;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           height: 100vh;
-           color: #1a1a1a;
-        }
-        
-        header {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           width: 80%;
-           padding: 20px;
-           background-color: #f5f5f5;
-           border-radius: 10px;
-           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-           font-size: 20px;
-           font-weight: bold;
-          
-           /* padding-left: 10%; */
-        }
-        
-        nav a {
-           /* padding-right: 10%; */
-           text-decoration: none;
-           color: #333;
-        }
-        
-        main {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           width: 90%;
-           padding: 20px;
-        }
-        
-        .form {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           width: 300px;
-           padding: 20px;
-           background-color: #f0f0f0;
-           border-radius: 10px;
-           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form h2 {
-           margin-top: 0;
-           color: #1a1a1a;
-        }
-        
-        .form input, .form button {
-           width: 100%;
-           margin-bottom: 10px;
-           padding: 10px;
-           border-radius: 10px;
-           border: 1px solid #ddd;
-           background-color: #fafafa;
-        }
-        
-        .form button {
-           background-color: #1a1a1a;
-           color: #fff;
-           cursor: pointer;
-        }
-        
-        footer {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           width: 80%;
-           padding: 20px;
-           background-color: #f5f5f5;
-           border-radius: 10px;
-           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer a {
-           margin: 0 10px;
-           text-decoration: none;
-           color: #333;
-        }
-        </style>
+<style>
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   color: #1a1a1a;
+}
+
+.logo {
+   font-size: 3em;
+   text-align: center;
+   margin: 20px 0;
+}
+
+.input{
+   margin-bottom: 20px;
+}
+.login-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 500px;
+   height: 400px;
+   background-color: #f0f0f0;
+   border-radius: 10px;
+   margin: 20px 0;
+}
+footer {
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding: 20px;
+  
+   background-color: #f5f5f5;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+   font-size: 1.2em;
+   margin: 10px 0;
+}
+
+.login-form input {
+   width: 200px;
+   height: 40px;
+   border-radius: 10px;
+   border: 1px solid #ddd;
+   padding: 0 10px;
+   margin: 10px 0;
+}
+
+.login-form button {
+   width: 200px;
+   height: 50px;
+   border-radius: 10px;
+   border: none;
+   background-color: #222;
+   color: #fff;
+   font-size: 1.2em;
+   margin: 10px 0;
+}
+
+
+
+footer a {
+   margin: 0 10px;
+   color: #333;
+   text-decoration: none;
+}
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Создание резюме</title>
@@ -114,7 +98,7 @@
     <textarea name="education" rows="4" cols="50" required></textarea><br><br>
     <label for="skills">Навыки:</label><br>
     <textarea name="skills" rows="4" cols="50" required></textarea><br><br>
-    <input type="submit" value="Сохранить резюме">
+    <input type="submit" class="input" value="Сохранить резюме">
 </form>
 
 <?php
