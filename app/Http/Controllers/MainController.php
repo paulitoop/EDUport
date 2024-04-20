@@ -44,6 +44,11 @@ class MainController extends Controller
     {
         return view("events");
     }
+    public function eventsGo(Request $request)
+
+    {
+        return view("eventsGo");
+    }
 
     public function resume()
 
