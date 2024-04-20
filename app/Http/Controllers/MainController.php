@@ -42,7 +42,13 @@ class MainController extends Controller
     public function events(Request $request)
 
     {
-        // dd($content = $request->all());
         return view("events");
+    }
+
+    public function resume()
+
+    {
+        // dd($content = $request->all());
+        return view("resume");
     }
 }

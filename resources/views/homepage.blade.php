@@ -200,12 +200,8 @@ footer {
            <h2>Настройки профиля</h2>
            <div class="grid">
                <div class="grid-item">
-                   <h3><a href="/events">⚛️ Поиск мероприятий</a></h3>
-                   {{-- <form action="/events" method="post">
-                     @csrf
-                     <button type="submit" name="your_name" age="123" value="your_value" class="btn-link">Go</button>
-                 </form> --}}
-                   <p>Найди то, к чему лежит душа!</p>
+                   <h3>⚛️ Загрузка достижений</h3>
+                   <p>Делитесь своими успехами в учебе и внеучебной деятельности.</p>
                </div>
                <div class="grid-item">
                    <h3>⚛️ Создание резюме</h3>
