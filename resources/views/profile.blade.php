@@ -115,7 +115,7 @@ body {
    <div class="container">
        <div class="header">
            <img src="ava.jpg" alt="Student Profile">
-           <h1>Иван Иванович</h1>
+           <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
        </div>
