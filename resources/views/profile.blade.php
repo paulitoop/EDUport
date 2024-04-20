@@ -138,6 +138,7 @@ body {
                <h2>Активность</h2>
                <a href="/">Главная</a>
                <a href="#">Галерея</a>
+               <a href="/resume">Создание резюме</a>
                <img src="cert1.png" alt="Profile">
                <img src="cert2.png" alt="Gallery">
                <img src="cert3.png" alt="Gallery">

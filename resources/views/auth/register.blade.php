@@ -177,7 +177,7 @@ footer a {
    </main>
    <footer>
        <div>
-           <a href="#">2023 EduPort</a>
+           <a href="http://inport.stud/">Главная</a>
            <a href="#">Все права соблюдены</a>
            <a href="#">Политика использования</a>
            <a href="#">Политика приватности</a>

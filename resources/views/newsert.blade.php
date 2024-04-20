@@ -12,14 +12,20 @@ header {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 20px;
+   padding: 50px;
    background-color: #fff;
+   position: relative;
 }
 
 .logo {
    font-size: 2em;
    color: #333;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
+
 
 .account {
    display: flex;
@@ -45,6 +51,18 @@ header {
    padding: 20px;
    background-color: #f0f0f0;
    border-radius: 10px;
+}
+footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #f5f5f5;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .info form {
@@ -84,32 +102,27 @@ header {
 </style>
 <body>
    <header>
-       <div class="logo">new dost</div>
-       <div class="account">
-           <a href="#" class="active">Account</a>
-           <a href="#">Sign In</a>
-       </div>
+       <div class="logo">Добавить достижение</div>
+       
    </header>
    <section class="info">
        <form>
-           <h2>info</h2>
-           <input type="text" placeholder="name">
-           <input type="text" placeholder="organization">
-           <input type="text" placeholder="opisani">
-           <input type="text" placeholder="napravljenie">
-           <select>
-               <option value="">slognost</option>
-               <option value="">slognost 1</option>
-               <option value="">slognost 2</option>
-           </select>
+           <h2>Информация о достижении</h2>
+           <input type="text" placeholder="Название мероприятия">
+           <input type="text" placeholder="Организация">
+           <input type="text" placeholder="Описание">
            <input type="file" accept="image/*">
-           <input type="submit" value="confirm">
+           <input type="submit" value="Подтвердить">
        </form>
    </section>
-   <section class="help">
-       <h2>Help</h2>
-       <a href="#">FAQs</a>
-       <a href="#">Contact</a>
-   </section>
+   <footer>
+       <div>
+           <a href="http://inport.stud/">Главная</a>
+           <a>Все права соблюдены</a>
+           <a>Политика использования</a>
+           <a>Политика приватности</a>
+           <a>Поддержка</a>
+       </div>
+   </footer>
 </body>
 </html>
