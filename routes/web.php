@@ -28,6 +28,7 @@ Route::get('/home', [MainController::class, 'home']);
 Route::get('/events', [MainController::class, 'events']);
 Route::get('/resume', [MainController::class, 'resume']);
 Route::get('/newsert', [MainController::class, 'newsert']);
+Route::get('/programs', [MainController::class, 'programs']);
 
 Auth::routes();
 

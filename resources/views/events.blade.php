@@ -216,11 +216,10 @@ footer {
              {{-- <h2 id="quoteTitle">Цитата:</h2> --}}
             <h2 id="quoteText"></h2>
             <script>
-               var category = 'success';
+               
                $.ajax({
                    method: 'GET',
-                   url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-                   headers: { 'X-Api-Key': 'r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ'},
+                   url: 'https://docs.kudago.com/api/#page:события,header:события-список-событий',
                    contentType: 'application/json',
                    success: function(result) {
                        console.log(result);
