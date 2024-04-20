@@ -5,112 +5,148 @@ body {
    font-family: Arial, sans-serif;
    margin: 0;
    padding: 0;
-   color: #333;
+   background-color: #f0f0f0;
 }
 
 .container {
    max-width: 1200px;
    margin: 0 auto;
    padding: 20px;
-   background-color: #fff;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.header {
-   text-align: center;
-   padding: 50px 0;
-   background-color: #d4c6c6;
-   border-radius: 40px;
-}
-
-.header img {
-   width: 100px;
-   height: 100px;
-   border-radius: 50%;
-   background-color: #000;
-}
-
-.header h1 {
-   margin: 10px 0;
-   font-size: 24px;
-}
-
-.header p {
-   margin: 0;
-   font-size: 12px;
+.user-info a{
+  margin-left: 5%; 
+  color: black;
+  text-decoration: none; 
   
+/* use %, em, px. % and em are recommended. */
 }
 
-.header a {
-   padding-top: 1%;
-   padding-left: 47%;
-   color: #000;
-   text-decoration: none; 
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.logo {
+   font-size: 24px;
+   font-weight: bold;
+   
+}
+
+.user-info {
    display: flex;
    align-items: center;
-   position:relative;
+   position: absolute;
+   right: 200px;
+ 
+   
+   
+}
+
+.link:hover {
+   color: #00B3FF;
+}
+
+
+
+.banner {
+   background-image: url('back.png');
+   background-size: cover;
+   color: #fff;
+   text-align: center;
+   padding: 50px 0;
+   background-position: 50% 50%;
+  
+   
+   
+}
+
+.banner-text {
+   margin-left: 16%;
+   margin-right: 16%;
+   width: 30p;
+   border-radius: 15px;
+   padding: 50px 20%;
+   background-size: auto;
+   background-color: rgba(59, 59, 59, 0.497);
+   font-size: 25px;
+   
 }
 
 .content {
-   display: flex;
-   justify-content: space-between;
    margin-top: 50px;
 }
 
-.left-column, .right-column {
-   width: 45%;
-}
-
-.left-column img, .right-column img {
-   width: 100%;
-   height: 400px;
-   background-color: #ffffff28;
-   border-radius: 10px;
-   margin-bottom: 20px;
-   object-fit: contain;
-}
-
-.left-column h2, .right-column h2 {
-   font-size: 18px;
-   margin-bottom: 20px;
-}
-
-.left-column p, .right-column p {
-   font-size: 14px;
-   line-height: 1.5;
-   margin-bottom: 20px;
-}
-
-.left-column a, .right-column a {
-   display: block;
-   padding: 10px;
-   text-decoration: none;
+.content h2 {
    color: #333;
-   border: 1px solid #333;
+   margin-bottom: 20px;
+}
+
+.grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+}
+
+.grid-item {
+   background-color: #fff;
+   padding: 20px;
    border-radius: 10px;
-   text-align: center;
-   margin-bottom: 20px;
 }
 
-.right-column img {
-   width: 100px;
-   height: 100px;
-   background-color: #000;
-   border-radius: 50%;
-   margin-bottom: 20px;
-}
-
-.right-column h3 {
-   font-size: 18px;
+.grid-item h3 {
+   color: #333;
    margin-bottom: 10px;
 }
 
-.right-column p {
+.grid-item p {
+   color: #666;
    font-size: 14px;
-   line-height: 1.5;
-   margin-bottom: 20px;
+}
+
+.grid-item a {
+   text-decoration: none; 
+   color: #333;
+   margin-bottom: 10px;
+}
+
+.grid-item a:hover {
+   color: #562664;
+   
+}
+
+footer {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 50px;
+}
+
+.footer-item {
+   text-align: center;
+}
+
+.footer-item h3 {
+   color: #333;
+   margin-bottom: 10px;
+}
+
+.footer-item p {
+   color: #666;
+   font-size: 14px;
 }
 </style>
+<head>
+
+
+</head>
 <body>
    <div class="container">
        <header>
@@ -153,7 +189,6 @@ body {
                   @endguest
               </ul>
            </div>
-           
        </header>
        <div class="banner">
             <div class="banner-text">
@@ -162,73 +197,6 @@ body {
             </div>
        </div>
        
-       <?php
-               $url = "https://favqs.com/api/qotd";
-               $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
-       
-       <?php
-               $url = "https://favqs.com/api/qotd";
-               $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
-              
-               $ch = curl_init();
-               curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-               curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
-               $json_data = curl_exec($ch);
-               $data = (array) json_decode($json_data, true);
-               
-               
-               // echo $data;
-           ?>
-           <h2>Цитата дня - {{$data["quote"]["body"]}}</h1>
-            
-            <h2 id="quoteText"></h2>
-            <script>
-               var category = 'success';
-               $.ajax({
-                   method: 'GET',
-                   url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-                   headers: { 'X-Api-Key': 'r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ'},
-                   contentType: 'application/json',
-                   success: function(result) {
-                       console.log(result);
-                        $('#quoteText').text(result[0].quote);
-                   },
-                   error: function ajaxError(jqXHR) {
-                       console.error('Error: ', jqXHR.responseText);
-                   }
-               });
-           </script>
-
-            {{-- <h2>Цитата дня - {{$data}}</h1> --}}
-
-           
-           
-
-            {{-- <h2>Цитата дня - {{$data}}</h1> --}}
-
-           
-           
-           <h2 id="quoteText1"></h2>
-           <script>
-              var category = 'success';
-              $.ajax({
-                  method: 'GET',
-                  url: 'https://kudago.com/public-api/v1.2/place-categories/?lang=ru',
-                  headers: { 'Access-Control-Allow-Origin': 'http://localhost'},
-                  url: 'https://kudago.com/public-api/v1.2/place-categories/?lang=ru',
-                  headers: { 'Access-Control-Allow-Origin': 'http://localhost'},
-                  contentType: 'application/json',
-                  success: function(result) {
-                      console.log(result);
-                       $('#quoteText1').text(result);
-                       $('#quoteText1').text(result);
-                  },
-                  error: function ajaxError(jqXHR) {
-                      console.error('Error: ', jqXHR.responseText);
-                  }
-              });
-          </script>
-
        <footer>
            <div class="footer-item">
                <h3>⚛️ Поддержка</h3>
@@ -237,8 +205,7 @@ body {
                <p>Навигация</p>
                <p>Контакты</p>
            </div>
-       </div>
+       </footer>
    </div>
 </body>
 </html>
-
