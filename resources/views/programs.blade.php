@@ -125,7 +125,9 @@ header {
    margin-bottom: 10px;
 }
 
-
+.new-class h2{
+    text-align: center;
+}
 
 footer {
    background-color: #fff;
@@ -159,6 +161,13 @@ footer {
     box-shadow: 0 0 5px rgba(135, 206, 250, 10); /* Тень для контейнера */
     position: relative;
  
+}
+
+
+.itemProgName{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
 }
 .item-container:hover{
     transition: 0.5s;
@@ -308,10 +317,19 @@ footer {
             
                 for ($i = 1; $i < count($data); $i++) {
                     echo '<div class="item-container">';
-                    for ($k = 0; $k < 8; $k++) {
+                        echo "<div class='item'>";
+                        echo "<div class='itemProgName'>";
+                        echo $data[0][1] . ": " . $data[$i][1];
+                        echo "</div>";
+                        echo "</div>";
+                    for ($k = 2; $k < 7; $k++) {
                         echo "<div class='item'>";
                         if ($k < 6 || $k == 7) {
-                            echo $data[0][$k] . ": " . $data[$i][$k];
+                            if ($data[0][$k]!="ID" && $data[0][$k]!="Тип")
+                            {
+                                echo $data[0][$k] . ": " . $data[$i][$k];
+                            }
+                            
                         } else {
                             echo $data[$i][$k];
                         }
