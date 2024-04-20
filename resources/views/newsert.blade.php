@@ -106,10 +106,6 @@ footer {
        
    </header>
    <section class="info">
-<form action="upload_image.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="image" />
-    <button type="submit" name="submit">Сохранить изображение</button>
-</form>
        <form>
          
            <h2>Информация о сертификате</h2>
