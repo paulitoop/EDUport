@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if (isset($_POST['submit'])) {
+    // Получаем данные из формы
+    $eventName = $_POST['eventName'];
+    $organization = $_POST['organization'];
+    $description = $_POST['description'];
+
+    // Путь для сохранения изображения
+    $imageUploadPath = 'C:\laragon\www\inport\public\uploads';
+    
+    // Путь для сохранения текстового файла
+    $textFilePath = 'C:\laragon\www\inport\public\text_files';
+
+    // Проверяем загружено ли изображение
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        // Получаем имя файла
+        $imageName = $_FILES['image']['name'];
+        // Перемещаем файл в папку для загрузки изображений
+        move_uploaded_file($_FILES['image']['tmp_name'], $imageUploadPath . $imageName);
+        
+        // Создаем текстовый файл и записываем в него данные
+        $textData = "Название мероприятия: $eventName\nОрганизация: $organization\nОписание: $description";
+        file_put_contents($textFilePath . 'certificate_info.txt', $textData);
+
+        // Выводим сообщение об успешном сохранении
+        echo '<p>Изображение и данные успешно сохранены.</p>';
+    } else {
+        // Выводим сообщение об ошибке загрузки изображения
+        echo '<p>Произошла ошибка при загрузке изображения.</p>';
+    }
+}
+?>
+
 <style>
 body {
    font-family: Arial, sans-serif;
@@ -106,15 +139,15 @@ footer {
        
    </header>
    <section class="info">
-       <form>
-         
-           <h2>Информация о сертификате</h2>
-           <input type="text" placeholder="Название мероприятия">
-           <input type="text" placeholder="Организация">
-           <input type="text" placeholder="Описание">
-           <input type="file" accept="image/*">
-           <button type="submit" name="submit">Сохранить изображение</button>
-       </form>
+   <form method="POST" action="/newsert" enctype="multipart/form-data">
+    <h2>Информация о сертификате</h2>
+    <input type="text" name="eventName" placeholder="Название мероприятия">
+    <input type="text" name="organization" placeholder="Организация">
+    <input type="text" name="description" placeholder="Описание">
+    <input type="file" name="image" accept="image/*">
+    <button type="submit" name="submit">Сохранить изображение</button>
+</form>
+
    </section>
    <footer>
        <div>

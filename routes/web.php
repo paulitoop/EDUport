@@ -28,7 +28,6 @@ Route::get('/home', [MainController::class, 'home']);
 Route::get('/events', [MainController::class, 'events']);
 Route::get('/resume', [MainController::class, 'resume']);
 Route::get('/newsert', [MainController::class, 'newsert']);
-
 Auth::routes();
-
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
+Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');;
