@@ -35,6 +35,16 @@ header {
    font-size: 24px;
    font-weight: bold;
    
+   
+}
+.logo a{
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+   color: #562664;
+   
 }
 
 .user-info {
@@ -170,7 +180,7 @@ footer {
 <body>
    <div class="container">
        <header>
-           <div class="logo">⚛️ Мероприятия</div>
+           <div class="logo"><a href="/"> ⚛️ Мероприятия</a></div>
            <div class="user-info">
             {{-- <a class="link" href='http://inport.stud/login'>Войти</a>
             <a class="link" href="http://inport.stud/register">Зарегистрироваться</a> --}}
