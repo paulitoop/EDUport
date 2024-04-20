@@ -24,6 +24,8 @@ Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/profile', [MainController::class, 'profile']);
 Route::get('/aut', [MainController::class, 'aut']);
 Route::get('/home', [MainController::class, 'home']);
+// Route::post('/events', [MainController::class, 'events']);
+Route::get('/events', [MainController::class, 'events']);
 
 Auth::routes();
 
