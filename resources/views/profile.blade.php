@@ -118,7 +118,20 @@ body {
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
-           <h2>Цитата дня - {{}}</h1>
+           <?php
+               $url = "https://favqs.com/api/qotd";
+               $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
+              
+               $ch = curl_init();
+               curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+               curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
+               $json_data = curl_exec($ch);
+               $data = (array) json_decode($json_data, true);
+               
+               
+               // echo $data;
+           ?>
+           <h2>Цитата дня - {{$data["quote"]["body"]}}</h1>
        </div>
        <div class="content">
            <div class="left-column">
@@ -128,6 +141,7 @@ body {
                <img src="cert1.png" alt="Profile">
                <img src="cert2.png" alt="Gallery">
                <img src="cert3.png" alt="Gallery">
+               
            </div>
            <div class="right-column">
                <h2>Персональные данные</h2>
@@ -147,3 +161,4 @@ body {
    </div>
 </body>
 </html>
+

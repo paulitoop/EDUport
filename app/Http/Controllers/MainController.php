@@ -33,6 +33,7 @@ class MainController extends Controller
         return view("aut");
     }
 
+
     // public function events(Request $request)
     // {
     //     $data = $request->all();
