@@ -43,8 +43,21 @@ header {
    position: absolute;
    right: 200px;
  
+
    
-   
+}
+.user-info a{
+  margin-left: 5%; 
+  color: black;
+  text-decoration: none; 
+  font-size: 20px;
+  
+/* use %, em, px. % and em are recommended. */
+}
+.user-info a:hover{
+  
+   color: #562664;
+/* use %, em, px. % and em are recommended. */
 }
 
 .link:hover {
@@ -159,43 +172,46 @@ footer {
        <header>
            <div class="logo">⚛️ Мероприятия</div>
            <div class="user-info">
-               {{-- <a class="link" href='http://inport.stud/login'>Войти</a>
-               <a class="link" href="http://inport.stud/register">Зарегистрироваться</a> --}}
-               <ul class="navbar-nav ms-auto">
-                  <!-- Authentication Links -->
-                  @guest
-                      @if (Route::has('login'))
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
-                          </li>
-                      @endif
+            {{-- <a class="link" href='http://inport.stud/login'>Войти</a>
+            <a class="link" href="http://inport.stud/register">Зарегистрироваться</a> --}}
+            
+               <!-- Authentication Links -->
+               @guest
+                   @if (Route::has('login'))
+                       
+                           <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
+                       
+                   @endif
 
-                      @if (Route::has('register'))
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегестрироваться') }}</a>
-                          </li>
-                      @endif
-                  @else
-                      <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }}
-                          </a>
+                   @if (Route::has('register'))
+                       
+                           <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегестрироваться') }}</a>
+                       
+                   @endif
+               @else
+                   {{-- <li class="nav-item dropdown"> --}}
+                    
+                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                           {{Auth::user()->name }}
+                       </a>
 
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                 onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                  {{ __('Выйти') }}
-                              </a>
+                       {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                        <div class="dropdown-menu dropdown-menu-end">
+                           <a class="dropdown-item" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                               {{ __('Выйти') }}
+                           </a>
 
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                  @csrf
-                              </form>
-                          </div>
-                      </li>
-                  @endguest
-              </ul>
-           </div>
+                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                           </form>
+                       </div>
+         
+                   {{-- </li> --}}
+               @endguest
+           
+        </div>
        </header>
        <div class="banner">
             <div class="banner-text">

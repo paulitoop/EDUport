@@ -14,11 +14,21 @@ body {
    padding: 20px;
 }
 
+
+
+
+
 .user-info a{
   margin-left: 5%; 
   color: black;
   text-decoration: none; 
+  font-size: 20px;
   
+/* use %, em, px. % and em are recommended. */
+}
+.user-info a:hover{
+  
+   color: #562664;
 /* use %, em, px. % and em are recommended. */
 }
 
@@ -35,13 +45,25 @@ header {
    font-size: 24px;
    font-weight: bold;
    
+   
+}
+.logo a{
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+   color: #562664;
+   
 }
 
 .user-info {
    display: flex;
-   align-items: center;
+   align-items:center;
    position: absolute;
    right: 200px;
+   /* width: 600px; */
+   text-align: right;
  
    
    
@@ -101,6 +123,7 @@ header {
 .grid-item h3 {
    color: #333;
    margin-bottom: 10px;
+   text-align: center;
 }
 
 .grid-item p {
@@ -136,12 +159,18 @@ footer {
 .footer-item h3 {
    color: #333;
    margin-bottom: 10px;
+   
 }
 
 .footer-item p {
    color: #666;
    font-size: 14px;
 }
+
+.nav-link.dropdown-toggle{
+   
+}
+
 </style>
 <head>
 
@@ -150,31 +179,33 @@ footer {
 <body>
    <div class="container">
        <header>
-           <div class="logo">⚛️ Главная</div>
+           <div class="logo"><a href="/"> ⚛️ Главная</a></div>
            <div class="user-info">
                {{-- <a class="link" href='http://inport.stud/login'>Войти</a>
                <a class="link" href="http://inport.stud/register">Зарегистрироваться</a> --}}
-               <ul class="navbar-nav ms-auto">
+               
                   <!-- Authentication Links -->
                   @guest
                       @if (Route::has('login'))
-                          <li class="nav-item">
+                          
                               <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
-                          </li>
+                          
                       @endif
 
                       @if (Route::has('register'))
-                          <li class="nav-item">
+                          
                               <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегестрироваться') }}</a>
-                          </li>
+                          
                       @endif
                   @else
-                      <li class="nav-item dropdown">
+                      {{-- <li class="nav-item dropdown"> --}}
+                       
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }}
+                              {{Auth::user()->name }}
                           </a>
 
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                           <div class="dropdown-menu dropdown-menu-end">
                               <a class="dropdown-item" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
@@ -185,9 +216,10 @@ footer {
                                   @csrf
                               </form>
                           </div>
-                      </li>
+            
+                      {{-- </li> --}}
                   @endguest
-              </ul>
+              
            </div>
        </header>
        <div class="banner">
@@ -204,12 +236,12 @@ footer {
                    <p>Делитесь своими успехами в учебе и внеучебной деятельности.</p>
                </div>
                <div class="grid-item">
-                   <h3><a href="/resume">⚛️ Создание резюме</a></h3>
-                   <p>Создайте профессиональное резюме, чтобы продемонстрировать свои навыки и опыт.</p>
+                   <h3><a href="/events">⚛️ Мероприятия</a></h3>
+                   <p>Проведите время с пользой, благодаря персональной подборке мероприятий.</p>
                </div>
                <div class="grid-item">
-                   <h3><a href="/programs">⚛️ Программы цифровой кафедры</a></h3>
-                   <p>Ознакомтесь с актуальным списком доступных обучений.</p>
+                   <h3><a href="/programs">⚛️ Образование</a></h3>
+                   <p>Ознакомтесь с актуальным списком доступного обучения.</p>
                </div>
                <div class="grid-item">
                      <h3><a href="/profile">⚛️Личный кабинет</a></h3>

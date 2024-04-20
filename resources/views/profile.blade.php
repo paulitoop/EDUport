@@ -35,6 +35,9 @@ body {
    font-size: 24px;
 }
 
+.header h2 {
+   font-size: 18px;
+}
 .header p {
    margin: 0;
    font-size: 12px;
