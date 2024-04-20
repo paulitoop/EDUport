@@ -166,7 +166,6 @@ body {
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
        
-       <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
               

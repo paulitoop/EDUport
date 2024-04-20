@@ -43,7 +43,7 @@ header {
    position: absolute;
    right: 200px;
  
-   
+
    
 }
 
@@ -59,6 +59,7 @@ header {
    color: #fff;
    text-align: center;
    padding: 50px 0;
+   margin: 50px; 
    background-position: 50% 50%;
   
    
@@ -142,6 +143,19 @@ footer {
    color: #666;
    font-size: 14px;
 }
+.item-container {
+    border: 1px solid #ccc; /* Граница для разделения контейнеров */
+    margin-bottom: 10px; /* Отступ между контейнерами */
+    padding: 10px; /* Поля внутри контейнера */
+    border-radius: 10px; /* Закругление углов контейнера */
+    background-color: #f9f9f9; /* Цвет фона контейнера */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+}
+.item {
+    margin-right: 10px; /* Отступ между элементами внутри контейнера */
+    display: inline-block; /* Размещение элементов внутри контейнера в строку */
+    
+}
 </style>
 <head>
 
@@ -191,12 +205,11 @@ footer {
        <div class="banner">
             <div class="banner-text">
                <h1>EduPort</h1>
-               <p>Твоё идеальное портфолио</p>
+               <p>Твоё дополнительное образование</p>
             </div>
        </div>
        <div class="new-class">
            <h2>Список программ</h2>
-           <div class="grid">
            <?php
             $file_path = "prog.csv";
             $file_encodings = ['cp1251','UTF-8'];
@@ -266,16 +279,34 @@ footer {
                 $data[] = str_getcsv( $line, $col_delimiter ); // linedata
                 unset( $lines[$key] );
             }
-        
+            
             ?>
-
-           <!-- <p>{{print_r($data)}}</p>
-           <p>{{implode (';',$data[0])}}</p> -->
-            @foreach($data as $row)
-            <h>{{implode (';',$row)}}</h>
-            @endforeach
-           </div>
-       </div>
+            <?php
+            // for($i = 0; $i < 6; $i ++){
+            //     echo "<a>".$data[0][$i]."</a>";
+            // }
+            
+                for ($i = 1; $i < count($data); $i++) {
+                    echo '<div class="item-container">';
+                    for ($k = 0; $k < 8; $k++) {
+                        echo "<div class='item'>";
+                        if ($k < 6 || $k == 7) {
+                            echo $data[0][$k] . ": " . $data[$i][$k];
+                        } else {
+                            echo $data[$i][$k];
+                        }
+                        echo "</div>";
+                    }
+                    echo '</div>';
+            }
+           
+            
+           
+            // foreach($data as $row){
+            // echo "<h>".implode(' ',$row)."</h>";
+            // }
+                ?>
+        </div>
        <footer>
            <div class="footer-item">
                <h3>⚛️ Поддержка</h3>
