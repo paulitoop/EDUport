@@ -52,4 +52,11 @@ class MainController extends Controller
         // dd($content = $request->all());
         return view("resume");
     }
+
+    public function programs()
+
+    {
+        // dd($content = $request->all());
+        return view("programs");
+    }
 }
