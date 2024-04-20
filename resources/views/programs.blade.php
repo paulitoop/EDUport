@@ -176,7 +176,7 @@ footer {
 <body>
    <div class="container">
        <header>
-           <div class="logo">⚛️ Программы_ЦК</div>
+           <a style = "text-decoration: none;" href = "/"><div class="logo" >⚛️ Программы Цифровой Кафедры</div></a>
            <div class="user-info">
                <ul class="navbar-nav ms-auto">
                   
