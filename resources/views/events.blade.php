@@ -197,23 +197,22 @@ footer {
                <p>Твоё идеальное портфолио</p>
             </div>
        </div>
-{{--       
-         //       $url = "https://favqs.com/api/qotd";
-         //       $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
+       
+       <?php
+               $url = "https://favqs.com/api/qotd";
+               $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
               
-         //       $ch = curl_init();
-         //       curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-         //       curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
-         //       $json_data = curl_exec($ch);
-         //       $data = (array) json_decode($json_data, true);
+               $ch = curl_init();
+               curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+               curl_setopt($ch, CURLOPT_URL,$url.'?'.$options);
+               $json_data = curl_exec($ch);
+               $data = (array) json_decode($json_data, true);
                
                
-         //       // echo $data;
-         //  
-         // 
-         //  <h2>Цитата дня - {{$data["quote"]["body"]}}</h1>
-             --}}
-             {{-- <h2 id="quoteTitle">Цитата:</h2> --}}
+               // echo $data;
+           ?>
+           <h2>Цитата дня - {{$data["quote"]["body"]}}</h1>
+            
             <h2 id="quoteText"></h2>
             <script>
                var category = 'success';
@@ -232,16 +231,21 @@ footer {
                });
            </script>
 
+            {{-- <h2>Цитата дня - {{$data}}</h1> --}}
+
+           
+           
            <h2 id="quoteText1"></h2>
            <script>
               var category = 'success';
               $.ajax({
                   method: 'GET',
-                  url: 'https://kudago.com/public-api/v1.2/events/',
+                  url: 'https://kudago.com/public-api/v1.2/place-categories/?lang=ru',
+                  headers: { 'Access-Control-Allow-Origin': 'http://localhost'},
                   contentType: 'application/json',
                   success: function(result) {
                       console.log(result);
-                       $('#quoteText1').text(result[0].quote);
+                       $('#quoteText1').text(result);
                   },
                   error: function ajaxError(jqXHR) {
                       console.error('Error: ', jqXHR.responseText);
