@@ -33,7 +33,6 @@ class MainController extends Controller
         return view("aut");
     }
 
-
     // public function events(Request $request)
     // {
     //     $data = $request->all();
@@ -51,12 +50,5 @@ class MainController extends Controller
     {
         // dd($content = $request->all());
         return view("resume");
-    }
-
-    public function programs()
-
-    {
-        // dd($content = $request->all());
-        return view("programs");
     }
 }
