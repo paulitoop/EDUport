@@ -99,9 +99,10 @@ class MainController extends Controller
 
     public function redirectToProfile(Request $request)
     {
+        // dd(auth()->user()->status);
         if(auth()->check()) {
             $status = auth()->user()->status;
-            if ($status === 'worker') {
+            if ($status === 'employer') {
                 return view("profile_rab");
             } elseif ($status === 'organizer') {
                 return view('profile_org');
