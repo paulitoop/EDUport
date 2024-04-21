@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function store(Request $request){
         if($request->hasFile('image')){
             $request->image->store('public/usinf');
-            return view("profile");
+            return redirect()->route('home');
         }
         
         return $request->all();    

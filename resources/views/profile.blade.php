@@ -145,16 +145,25 @@ body {
                <?PHP
                   use Illuminate\Support\Facades\Storage;
 
-                  // Получение списка файлов в директории
+// Получение списка файлов в директории
                   $files = Storage::files('public/usinf');
 
                   // Перебор каждого файла
                   foreach ($files as $file) {
+                     // Получение расширения файла
+                     $extension = pathinfo($file, PATHINFO_EXTENSION);
+
                      // Генерация URL для файла
                      $fileUrl = Storage::url($file);
 
-                     // Вывод изображения на экран
-                     echo '<img src="' . $fileUrl . '" alt="' . basename($file) . '">';
+                     // Проверка типа файла и вывод соответствующего тега
+                     if (strtolower($extension) === 'pdf') {
+                        // Если файл PDF, используем тег <embed> для отображения
+                        echo '<embed src="' . $fileUrl . '" type="application/pdf" width="100%" height="400px" />';
+                     } else {
+                        // Если файл изображение, используем тег <img> для отображения
+                        echo '<img src="' . $fileUrl . '" alt="' . basename($file) . '">';
+                     }
                   }
                ?>
                
