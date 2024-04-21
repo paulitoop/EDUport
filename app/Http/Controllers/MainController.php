@@ -89,6 +89,13 @@ class MainController extends Controller
         return view("test");
     }
 
+    public function list()
+
+    {
+        // dd($content = $request->all());
+        return view("list");
+    }
+
 
     public function redirectToProfile(Request $request)
     {

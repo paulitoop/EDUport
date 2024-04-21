@@ -3,6 +3,7 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,7 @@ Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/programs', [MainController::class, 'programs']);
 Route::get('/zachetka', [MainController::class, 'zachetka']);
 Route::get('/test', [MainController::class, 'test']);
+Route::get('/list', [MainController::class, 'list']);
 Auth::routes();
 Route::get('/profile_rab', [MainController::class, 'profile_rab']);
 Route::get('/profile_org', [MainController::class, 'profile_org']);
@@ -43,6 +45,9 @@ Route::get('/profile', [MainController::class, 'redirectToProfile'])->name('redi
 Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');
 
 
-Route::post('/location', [App\Http\Controllers\LocationController::class, 'store']);
+Route::get('/list', [UserController::class, 'list']);
+
+
+
 
 
