@@ -153,7 +153,7 @@ footer {
     <header>
         <div class="logo">EduPort</div>
         <nav class="user-info">
-            <a href="/register">Зарегестрироваться</a>
+            <a href="/register">Зарегистрироваться</a>
         </nav>
     </header>
    <main>

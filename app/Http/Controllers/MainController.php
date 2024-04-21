@@ -52,6 +52,12 @@ class MainController extends Controller
     {
         return view("events");
     }
+
+    public function muzei(Request $request)
+
+    {
+        return view("muzei");
+    }
     public function eventsGo(Request $request)
 
     {
@@ -106,11 +112,13 @@ class MainController extends Controller
                 return view("profile_rab");
             } elseif ($status === 'organizer') {
                 return view('profile_org');
+            } elseif ($status === 'user') {
+                return view('profile');
             }
         }
-        
+        // dd(auth()->user()->status);
         // Если пользователь не аутентифицирован или его статус не определен, перенаправляем на общий профиль
-        return view('profile');
+        return view('homepage');
     }
 
     

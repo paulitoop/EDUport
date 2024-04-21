@@ -35,6 +35,7 @@ Route::get('/programs', [MainController::class, 'programs']);
 Route::get('/zachetka', [MainController::class, 'zachetka']);
 Route::get('/test', [MainController::class, 'test']);
 Route::get('/list', [MainController::class, 'list']);
+Route::get('/muzei', [MainController::class, 'muzei']);
 Auth::routes();
 Route::get('/profile_rab', [MainController::class, 'profile_rab']);
 Route::get('/profile_org', [MainController::class, 'profile_org']);

@@ -213,7 +213,7 @@ footer {
 
                    @if (Route::has('register'))
                        
-                           <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегестрироваться') }}</a>
+                           <a class="nav-link" href="{{ route('register') }}">{{ __('Зарегистрироваться') }}</a>
                        
                    @endif
                @else
