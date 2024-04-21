@@ -19,7 +19,7 @@ body {
 .header {
    text-align: center;
    padding: 50px 0;
-   background-color: #d4c6c6;
+   background-color: #aef7a3;
    border-radius: 40px;
 }
 
@@ -123,7 +123,7 @@ body {
            <a href="#">Контакты</a>
            <div>Название компании</div>
           
-              <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
+              <div>Статус пользователя: Организатор</div>
            <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
@@ -177,13 +177,15 @@ body {
            </div>
            <div class="right-column">
                <h2>Персональные данные</h2>
-               <p>Обновить профиль</p>
-               <p>Редактировать профиль</p>
+               <p>Название организации</p>
+               <p>Описание организации</p>
+               <a href="#">Редактировать профиль</a>
+               
                
                
                
                <h2>Помощь</h2>
-               <p>Вопросы</p>
+               
                <a href="#">FAQs</a>
                <a href="#">Контакты</a>
            </div>

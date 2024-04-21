@@ -123,7 +123,7 @@ body {
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
           
-              <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
+              <div>Статус пользователя: Студент</div>
            <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
@@ -181,6 +181,11 @@ body {
                <p> Название ВУЗа</p>
                <p> Направление обучениия</p>
                <p> Курс</p>
+
+               <h2>Тэги</h2>
+               <p>#Frontend #JS #CSS </p>
+               
+
                <a href="#">Редактировать профиль</a>
                <a href="/zachetka">Обзор успеваемости</a>
                <a href="/newsert">Добавить достижение</a>

@@ -19,8 +19,14 @@ body {
 .header {
    text-align: center;
    padding: 50px 0;
-   background-color: #d4c6c6;
+   background-color: #00004d ;
    border-radius: 40px;
+   
+}
+
+.header div{
+   color: #fff;
+   
 }
 
 .header img {
@@ -33,21 +39,24 @@ body {
 .header h1 {
    margin: 10px 0;
    font-size: 24px;
+   color: #fff;
 }
 
 .header h2 {
    font-size: 18px;
+   color: #fff;
 }
 .header p {
    margin: 0;
    font-size: 12px;
+   color: #fff;
   
 }
 
 .header a {
    padding-top: 1%;
    padding-left: 47%;
-   color: #000;
+   color: #fff;
    text-decoration: none; 
    display: flex;
    align-items: center;
@@ -58,6 +67,7 @@ body {
    display: flex;
    justify-content: space-between;
    margin-top: 50px;
+   
 }
 
 .left-column, .right-column {
@@ -122,10 +132,10 @@ body {
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
           
-            <div>Название компании</div>
+            
 
           
-              <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
+              <div>Статус пользователя: Работодатель</div>
            <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
@@ -157,12 +167,15 @@ body {
            </div>
            <div class="right-column">
                <h2>Персональные данные</h2>
-               <p>Обновить профиль</p>
-               <p>Редактировать профиль</p>
+               <p>Название компании</p>
+               <p>Описание компании</p>
+               
+               
+               <a href="#">Редактировать профиль</a>
                
                
                <h2>Помощь</h2>
-               <p>Вопросы</p>
+               
                <a href="#">FAQs</a>
                <a href="#">Контакты</a>
            </div>
