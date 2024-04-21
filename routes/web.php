@@ -31,6 +31,7 @@ Route::get('/eventsEdu', [MainController::class, 'eventsEdu']);
 Route::get('/resume', [MainController::class, 'resume']);
 Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/programs', [MainController::class, 'programs']);
+Route::get('/zachetka', [MainController::class, 'zachetka']);
 Auth::routes();
 
 Route::post('store', [HomeController::class, 'store'])->name('store');

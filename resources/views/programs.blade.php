@@ -328,7 +328,7 @@ footer {
                 $data[] = str_getcsv( $line, $col_delimiter ); // linedata
                 unset( $lines[$key] );
             }
-            
+                
             ?>
             <?php
             // for($i = 0; $i < 6; $i ++){

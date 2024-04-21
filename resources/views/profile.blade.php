@@ -140,7 +140,7 @@ body {
            <div class="left-column">
                <h2>Активность</h2>
                <a href="/">Главная</a>
-               <a href="#">Галерея</a>
+               <a href="/zachetka">Цифровая зачетка</a>
                <a href="/resume">Создание резюме</a>
                <?PHP
                   use Illuminate\Support\Facades\Storage;
