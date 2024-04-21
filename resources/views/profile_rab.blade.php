@@ -117,10 +117,13 @@ body {
 <body>
    <div class="container">
        <div class="header">
-           <img src="ava.jpg" alt="Student Profile">
+           <img src="ava_r.jpg" alt="Employer Profile">
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
+          
+            <div>Название компании</div>
+
           
               <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
            <?php
@@ -142,33 +145,12 @@ body {
            <div class="left-column">
                <h2>Активность</h2>
                <a href="/">Главная</a>
-               <a href="/zachetka">Цифровая зачетка</a>
-               <a href="/resume">Создание резюме</a>
-               <a href="#">Просмотр вакансий</a>
-               <?PHP
-                  use Illuminate\Support\Facades\Storage;
+               <a href="#">Просмотр кандидатов</a>
+               <a href="#">Добавить вакансию</a>
+               <a href="#">Загрузить файл</a>
+               
+               
 
-// Получение списка файлов в директории
-                  $files = Storage::files('public/usinf');
-
-                  // Перебор каждого файла
-                  foreach ($files as $file) {
-                     // Получение расширения файла
-                     $extension = pathinfo($file, PATHINFO_EXTENSION);
-
-                     // Генерация URL для файла
-                     $fileUrl = Storage::url($file);
-
-                     // Проверка типа файла и вывод соответствующего тега
-                     if (strtolower($extension) === 'pdf') {
-                        // Если файл PDF, используем тег <embed> для отображения
-                        echo '<embed src="' . $fileUrl . '" type="application/pdf" width="100%" height="400px" />';
-                     } else {
-                        // Если файл изображение, используем тег <img> для отображения
-                        echo '<img src="' . $fileUrl . '" alt="' . basename($file) . '">';
-                     }
-                  }
-               ?>
                
              
                
@@ -177,11 +159,8 @@ body {
                <h2>Персональные данные</h2>
                <p>Обновить профиль</p>
                <p>Редактировать профиль</p>
-               <a href="/newsert">Добавить достижение</a>
-               <h2>Достижения</h2>
-               <img src="ach1.png" alt="Achievement 1">
-               <img src="ach2.png" alt="Achievement 2">
-               <img src="ach3.png" alt="Achievement 3">
+               
+               
                <h2>Помощь</h2>
                <p>Вопросы</p>
                <a href="#">FAQs</a>
