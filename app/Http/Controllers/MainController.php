@@ -82,5 +82,28 @@ class MainController extends Controller
         return view("zachetka");
     }
 
+    public function test()
+
+    {
+        // dd($content = $request->all());
+        return view("test");
+    }
+
+
+    public function redirectToProfile(Request $request)
+    {
+        if(auth()->check()) {
+            $status = auth()->user()->status;
+            if ($status === 'worker') {
+                return view("profile_rab");
+            } elseif ($status === 'organizer') {
+                return view('profile_org');
+            }
+        }
+        
+        // Если пользователь не аутентифицирован или его статус не определен, перенаправляем на общий профиль
+        return view('profile');
+    }
+
     
 }
