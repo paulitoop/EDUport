@@ -16,6 +16,7 @@ body {
    font-size: 3em;
    text-align: center;
    margin: 20px 0;
+   
 }
 
 .login-form {
@@ -24,7 +25,7 @@ body {
    align-items: center;
    justify-content: center;
    width: 500px;
-   height: 400px;
+   height: 450px;
    background-color: #f0f0f0;
    border-radius: 10px;
    margin: 20px 0;
@@ -53,6 +54,7 @@ body {
    color: #fff;
    font-size: 1.2em;
    margin: 10px 0;
+   
 }
 
 footer {

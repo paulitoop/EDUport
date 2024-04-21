@@ -16,6 +16,8 @@ body {
    font-size: 3em;
    text-align: center;
    margin: 20px 0;
+   
+   
 }
 
 .login-form {
@@ -33,6 +35,7 @@ body {
 .login-form label {
    font-size: 1.2em;
    margin: 10px 0;
+   
 }
 
 .login-form input {
@@ -66,6 +69,8 @@ footer a {
    color: #333;
    text-decoration: none;
 }
+
+
 </style>
 <body>
    <header>
