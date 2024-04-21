@@ -167,11 +167,29 @@ footer {
 }
 
 .event {
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            padding: 10px;
-            
+   border: 1px solid #ccc; /* Граница для разделения контейнеров */
+    margin-bottom: 10px; /* Отступ между контейнерами */
+    padding: 10px; /* Поля внутри контейнера */
+    border-radius: 10px; /* Закругление углов контейнера */
+    background-color: #f9f9f9; /* Цвет фона контейнера */
+    box-shadow: 0 0 5px rgba(135, 206, 250, 10); /* Тень для контейнера */
+    position: relative;
         }
+.event:hover{
+    transition: 0.5s;
+    box-shadow: 40px 10px 10px rgba(135, 206, 250, 30);; /* make this whatever you want */
+    margin-bottom: 15px; /* Отступ между контейнерами */
+    margin-top: 15px; /* Отступ между контейнерами */
+}
+.item {
+    margin-right: 10px; /* Отступ между элементами внутри контейнера */
+    margin-bottom: 10px; /* Отступ между контейнерами */
+    padding: 10px; /* Поля внутри контейнера */
+    border: 1px solid rgba(119, 136, 153); /* Граница для разделения контейнеров */
+    border-radius: 10px;
+    /* display: inline-block; Размещение элементов внутри контейнера в строку */
+    
+}
 </style>
 <head>
 
@@ -255,6 +273,7 @@ if ($data !== null && isset($data['results'])) {
         // Выводим информацию о мероприятии
         echo '<div class="event">';
         echo '<h2>' . $event['title'] . '</h2>';
+        echo "<div class='item'>";
         if (isset($event['organizer']['name'])) {
             echo '<p>Организатор: ' . $event['organizer']['name'] . '</p>';
         }
@@ -279,6 +298,7 @@ if ($data !== null && isset($data['results'])) {
         if (isset($event['periods'][0]['lower']) && isset($event['periods'][0]['upper'])) {
             echo '<p>Дата проведения: С ' . date('Y-m-d', strtotime($event['periods'][0]['lower'])) . ' по ' . date('Y-m-d', strtotime($event['periods'][0]['upper'])) . '</p>';
         }
+        echo "</div>";
         echo '</div>';
     }
 } else {
