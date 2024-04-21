@@ -233,6 +233,11 @@ footer {
          <?php
 // Задаем URL для GET запроса
 $date = time();
+$current_datetime = new DateTime();
+
+// Преобразуем объект DateTime в строку в нужном формате
+// $date_time_string = $current_datetime->format('Y-m-d H:i:s');
+// echo $date_time_string;
 // echo $date;
 $url = 'https://spb-afisha.gate.petersburg.ru/kg/external/afisha/events/?categories=education&fields=dates,title,place,description,site_url&actual_since='. $date;
 
