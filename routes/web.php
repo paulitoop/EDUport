@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +31,8 @@ Route::get('/resume', [MainController::class, 'resume']);
 Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/programs', [MainController::class, 'programs']);
 Auth::routes();
+
+Route::post('store', [HomeController::class, 'store'])->name('store');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
 Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');;

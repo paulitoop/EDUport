@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Post;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\MainController;
 class HomeController extends Controller
 {
     /**
@@ -29,5 +29,12 @@ class HomeController extends Controller
     {
         return view('profile');
     }
-    
+    public function store(Request $request){
+        if($request->hasFile('image')){
+            $request->image->store('public/usinf');
+            return view("homepage");
+        }
+        
+        return $request->all();    
+    }
 }
