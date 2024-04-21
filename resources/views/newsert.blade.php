@@ -104,6 +104,9 @@ footer {
 </style>
 <body>
    <header>
+      <?php
+      
+      ?>
        <div class="logo">Добавить сертификат</div>
        
    </header>
