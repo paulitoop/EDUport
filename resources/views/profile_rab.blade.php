@@ -19,8 +19,14 @@ body {
 .header {
    text-align: center;
    padding: 50px 0;
-   background-color: #d4c6c6;
+   background-color: #00004d ;
    border-radius: 40px;
+   
+}
+
+.header div{
+   color: #fff;
+   
 }
 
 .header img {
@@ -33,21 +39,24 @@ body {
 .header h1 {
    margin: 10px 0;
    font-size: 24px;
+   color: #fff;
 }
 
 .header h2 {
    font-size: 18px;
+   color: #fff;
 }
 .header p {
    margin: 0;
    font-size: 12px;
+   color: #fff;
   
 }
 
 .header a {
    padding-top: 1%;
    padding-left: 47%;
-   color: #000;
+   color: #fff;
    text-decoration: none; 
    display: flex;
    align-items: center;
@@ -58,6 +67,7 @@ body {
    display: flex;
    justify-content: space-between;
    margin-top: 50px;
+   
 }
 
 .left-column, .right-column {
@@ -115,15 +125,17 @@ body {
 }
 </style>
 <body>
-  
    <div class="container">
        <div class="header">
-           <img src="ava.jpg" alt="Student Profile">
+           <img src="ava_r.jpg" alt="Employer Profile">
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
           
-              <div>Статус пользователя: Студент</div>
+            
+
+          
+              <div>Статус пользователя: Работодатель</div>
            <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
@@ -143,58 +155,27 @@ body {
            <div class="left-column">
                <h2>Активность</h2>
                <a href="/">Главная</a>
-         
-               <a href="/resume">Создание резюме</a>
-               <a href="#">Просмотр вакансий</a>
-               <?PHP
-                  use Illuminate\Support\Facades\Storage;
+               <a href="/list">Просмотр кандидатов</a>
+               <a href="#">Добавить вакансию</a>
+               <a href="#">Загрузить файл</a>
+               
+               
 
-// Получение списка файлов в директории
-                  $files = Storage::files('public/usinf');
-
-                  // Перебор каждого файла
-                  foreach ($files as $file) {
-                     // Получение расширения файла
-                     $extension = pathinfo($file, PATHINFO_EXTENSION);
-
-                     // Генерация URL для файла
-                     $fileUrl = Storage::url($file);
-
-                     // Проверка типа файла и вывод соответствующего тега
-                     if (strtolower($extension) === 'pdf') {
-                        // Если файл PDF, используем тег <embed> для отображения
-                        echo '<embed src="' . $fileUrl . '" type="application/pdf" width="100%" height="400px" />';
-                     } else {
-                        // Если файл изображение, используем тег <img> для отображения
-                        echo '<img src="' . $fileUrl . '" alt="' . basename($file) . '">';
-                     }
-                  }
-               ?>
                
              
                
            </div>
            <div class="right-column">
                <h2>Персональные данные</h2>
-               <p> Имя Фамилия</p>
-               <p> Возраст</p>
-               <p> Название ВУЗа</p>
-               <p> Направление обучениия</p>
-               <p> Курс</p>
-
-               <h2>Тэги</h2>
-               <p>#Frontend #JS #CSS </p>
+               <p>Название компании</p>
+               <p>Описание компании</p>
                
-
+               
                <a href="#">Редактировать профиль</a>
-               <a href="/zachetka">Обзор успеваемости</a>
-               <a href="/newsert">Добавить достижение</a>
-               <h2>Достижения</h2>
-               <img src="ach1.png" alt="Achievement 1">
-               <img src="ach2.png" alt="Achievement 2">
-               <img src="ach3.png" alt="Achievement 3">
+               
+               
                <h2>Помощь</h2>
-             
+               
                <a href="#">FAQs</a>
                <a href="#">Контакты</a>
            </div>

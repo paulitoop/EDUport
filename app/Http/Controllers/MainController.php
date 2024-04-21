@@ -28,6 +28,14 @@ class MainController extends Controller
     {
         return view("profile");
     }
+    public function profile_rab()
+    {
+        return view("profile_rab");
+    }
+    public function profile_org()
+    {
+        return view("profile_org");
+    }
     public function aut()
     {
         return view("aut");
@@ -74,11 +82,34 @@ class MainController extends Controller
         return view("zachetka");
     }
 
-    public function muzei()
+    public function test()
 
     {
         // dd($content = $request->all());
-        return view("muzei");
+        return view("test");
+    }
+
+    public function list()
+
+    {
+        // dd($content = $request->all());
+        return view("list");
+    }
+
+
+    public function redirectToProfile(Request $request)
+    {
+        if(auth()->check()) {
+            $status = auth()->user()->status;
+            if ($status === 'worker') {
+                return view("profile_rab");
+            } elseif ($status === 'organizer') {
+                return view('profile_org');
+            }
+        }
+        
+        // Если пользователь не аутентифицирован или его статус не определен, перенаправляем на общий профиль
+        return view('profile');
     }
 
     
