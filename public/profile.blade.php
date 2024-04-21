@@ -142,9 +142,9 @@ body {
                <a href="/">Главная</a>
                <a href="#">Галерея</a>
                <a href="/resume">Создание резюме</a>
-               <img src="storage/usinf/cert1.png" alt="Gallery">
-               <img src="storage/usinf/cert2.png" alt="Gallery">
-               <img src="storage/usinf/cert3.png" alt="Gallery">
+               <img src="cert1.png" alt="Gallery">
+               <img src="cert2.png" alt="Gallery">
+               <img src="cert3.png" alt="Gallery">
              
                
            </div>
