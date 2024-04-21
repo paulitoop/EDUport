@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello посередине экрана</title>
-</head>
-<body>
-    <div id="helloDiv" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-        <script>
-            document.write("Hello");
-        </script>
-    </div>
-</body>
-</html>
+
+<script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
+   
+   function showPosition(position) {
+     var Latitude = position.coords.latitude;
+     var Longitude = position.coords.longitude;
+     console.log($Latitude);
+   }
+   </script>

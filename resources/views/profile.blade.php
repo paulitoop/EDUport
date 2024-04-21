@@ -115,6 +115,7 @@ body {
 }
 </style>
 <body>
+  
    <div class="container">
        <div class="header">
            <img src="ava.jpg" alt="Student Profile">
