@@ -9,7 +9,7 @@ body {
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   height: 100vh;
+   height: 100%;
    color: #1a1a1a;
 }
 
@@ -70,8 +70,24 @@ footer {
    font-size: 1.2em;
    margin: 10px 0;
 }
-
-
+.content {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 50px;
+}
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.left-column p, .right-column p {
+   font-size: 14px;
+   line-height: 1.5;
+   margin-bottom: 20px;
+   
+}
 
 footer a {
    margin: 0 10px;
@@ -88,17 +104,24 @@ footer a {
 
 <h1>Создание резюме</h1>
 
+
 <form method="post" action="resume.php">
-    <label for="name">Имя:</label> <input type="text" name="name" required><br><br>
-    <label for="email">E-mail:</label> <input type="email" name="email" required><br><br>
-    <label for="phone">Телефон:</label> <input type="tel" name="phone" required><br><br>
-    <label for="experience">Опыт работы:</label><br>
+    <div><label for="sname">Фамилия:</label></div> <input type="text" name="sname"  required><br><br>
+    <div><label for="name">Имя:</label></div> <input type="text" name="name" required><br><br>
+    <div><label for="oname">Отчество:</label></div> <input type="text" name="oname" required><br><br>
+    <div><label for="email">E-mail:</label></div> <input type="email" name="email" required><br><br>
+    <div><label for="phone">Телефон:</label></div> <input type="tel" name="phone" required><br><br>
+    <div><label for="experience">Опыт работы:</label><br></div>
     <textarea name="experience" rows="4" cols="50" required></textarea><br><br>
     <label for="education">Образование:</label><br>
     <textarea name="education" rows="4" cols="50" required></textarea><br><br>
     <label for="skills">Навыки:</label><br>
     <textarea name="skills" rows="4" cols="50" required></textarea><br><br>
+    <div class="content">
+    <div class="left-column">
     <input type="submit" class="input" value="Сохранить резюме">
+    </div>
+</div>
 </form>
 
 <?php

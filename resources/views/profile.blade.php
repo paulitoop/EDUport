@@ -142,7 +142,7 @@ body {
            <div class="left-column">
                <h2>Активность</h2>
                <a href="/">Главная</a>
-               <a href="/zachetka">Цифровая зачетка</a>
+         
                <a href="/resume">Создание резюме</a>
                <a href="#">Просмотр вакансий</a>
                <?PHP
@@ -175,15 +175,20 @@ body {
            </div>
            <div class="right-column">
                <h2>Персональные данные</h2>
-               <p>Обновить профиль</p>
-               <p>Редактировать профиль</p>
+               <p> Имя Фамилия</p>
+               <p> Возраст</p>
+               <p> Название ВУЗа</p>
+               <p> Направление обучениия</p>
+               <p> Курс</p>
+               <a href="#">Редактировать профиль</a>
+               <a href="/zachetka">Обзор успеваемости</a>
                <a href="/newsert">Добавить достижение</a>
                <h2>Достижения</h2>
                <img src="ach1.png" alt="Achievement 1">
                <img src="ach2.png" alt="Achievement 2">
                <img src="ach3.png" alt="Achievement 3">
                <h2>Помощь</h2>
-               <p>Вопросы</p>
+             
                <a href="#">FAQs</a>
                <a href="#">Контакты</a>
            </div>
