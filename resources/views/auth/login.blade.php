@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 80%;
+   padding: 20px;
+   background-color: #f5f5f5;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 body {
    font-family: Arial, sans-serif;
    margin: 0;
@@ -13,10 +28,49 @@ body {
 }
 
 .logo {
-   font-size: 3em;
+    margin-left: 5%; 
+    font-size: 24px;
+   font-weight: bold;
    text-align: center;
    margin: 20px 0;
    
+}
+
+
+.logo a{
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+   color: #562664;
+   
+}
+
+.user-info {
+   display: flex;
+   align-items:center;
+   position: absolute;
+   right: 200px;
+   /* width: 600px; */
+   text-align: right;
+ 
+   
+   
+}
+
+.user-info a{
+  margin-left: 5%; 
+  color: black;
+  text-decoration: none; 
+  font-size: 20px;
+  
+/* use %, em, px. % and em are recommended. */
+}
+.user-info a:hover{
+  
+   color: #562664;
+/* use %, em, px. % and em are recommended. */
 }
 
 .login-form {
@@ -33,7 +87,7 @@ body {
 
 .login-form label {
    font-size: 1.2em;
-   margin: 10px 0;
+   /* margin: 10px 0; */
 }
 
 .login-form input {
@@ -57,86 +111,94 @@ body {
    
 }
 
-footer {
-   margin-top: 20px;
-   font-size: 0.8em;
-   color: #999;
-}
+input.form-check-input {
+    transform: scale(0.5); 
+    width: 50px;
 
+}
 footer a {
    margin: 0 10px;
    color: #333;
    text-decoration: none;
 }
-</style>
+footer {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 80%;
+   padding: 20px;
+   background-color: #f5f5f5;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.check-box{
+    width: 250px;
+    clear: both;
+}
+
+.check-box label{
+   vertical-align: middle;
+   position: relative;
+   bottom: 25%;
+}
+
+.forgotPas{
+
+    text-align: center;
+}
+    </style>    
+</head>
 <body>
-   <header>
-       <div class="logo">EduPort</div>
-   </header>
+    <header>
+        <div class="logo">EduPort</div>
+        <nav class="user-info">
+            <a href="/register">Зарегестрироваться</a>
+        </nav>
+    </header>
    <main>
-      <form method="POST" class="login-form" action="{{ route('login') }}">
+      <form method="POST" action="{{ route('login') }}">
          @csrf
-
-         <div class="row mb-3">
-             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Адрес Email') }}</label>
-
-             <div class="col-md-6">
-                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                 @error('email')
-                     <span class="invalid-feedback" role="alert">
-                         <strong>{{ $message }}</strong>
-                     </span>
-                 @enderror
+        <div class="login-form">
+         <div>
+            <div>
+                <label for="email">{{ __('Адрес Email') }}</label>
+            </div>
+             <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+             @error('email')
+             <div>
+                 <span>{{ $message }}</span>
              </div>
+             @enderror
          </div>
 
-         <div class="row mb-3">
-             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Пароль') }}</label>
-
-             <div class="col-md-6">
-                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                 @error('password')
-                     <span class="invalid-feedback" role="alert">
-                         <strong>{{ $message }}</strong>
-                     </span>
-                 @enderror
-             </div>
+         <div>
+            <div>
+                <label for="password">{{ __('Пароль') }}</label>
+            </div>
+             <input id="password" type="password" name="password" required autocomplete="current-password">
+             @error('password')
+            <div>
+                 <span>{{ $message }}</span>
+            </div>
+             @enderror
          </div>
 
-         <div class="row mb-3">
-             <div class="col-md-6 offset-md-4">
-                 <div class="form-check">
-                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                     <label class="form-check-label" for="remember">
-                         {{ __('Запомнить') }}
-                     </label>
-                 </div>
-             </div>
+         <div class="check-box">
+             <input type="checkbox" name="remember" id="remember" class ="form-check-input"{{ old('remember') ? 'checked' : '' }}>
+             <label for="remember">{{ __('Запомнить') }}</label>
          </div>
 
-         <div class="row mb-0">
-             <div class="col-md-8 offset-md-4">
-                 <button type="submit" class="btn btn-primary">
-                     {{ __('Войти') }}
-                 </button>
-
-                 @if (Route::has('password.request'))
-                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                         {{ __('Забыли пароль?') }}
-                     </a>
-                 @endif
-             </div>
+         <div>
+             <button type="submit">{{ __('Войти') }}</button>
+             @if (Route::has('password.request'))
+                <div class = "forgotPas">
+                 <a href="{{ route('password.request') }}">{{ __('Забыли пароль?') }}</a>
+                </div>
+             @endif
          </div>
+        </div>
      </form>
-       <!-- <form class="login-form">
-           <label for="username">Авторизация</label>
-           <input type="email" id="email" placeholder="Почта">
-           <input type="password" id="password" placeholder="Пароль">    
-           <button type="submit">Войти</button>
-       </form> -->
    </main>
    <footer>
        <a href="http://inport.stud/">Главная</a>

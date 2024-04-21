@@ -94,6 +94,31 @@ footer a {
    text-decoration: none;
    color: #333;
 }
+.status-check-box{
+    text-align: center;
+    position: relative;
+    
+    
+    
+}
+/* .status-check-box option{
+    width: 50px;
+    
+    
+} */
+#status{
+    text-align: center;
+    width: 100%;
+   margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   border: 1px solid #ddd;
+   background-color: #fafafa;
+
+}
+
+
+
 </style>
 <body>
    <header>
@@ -135,13 +160,15 @@ footer a {
                     @enderror
                 </div>
             </div>
-            <div>
+            <div class = "chek-box-div">
                 <label for="status">Статус</label>
+                <div class="status-check-box">
                 <select id="status" name="status">
                     <option value="user">Студент</option>
                     <option value="employer">Работодатель</option>
                     <option value="organizer">Организатор</option>
                 </select>
+                </div>
             </div>
             <div class="row mb-3">
                 <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Пароль') }}</label>
