@@ -25,10 +25,19 @@ header {
 }
 
 .logo {
-   font-size: 20px;
+   font-size: 24px;
    font-weight: bold;
-  
-   /* padding-left: 10%; */
+   
+   
+}
+.logo a{
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+   color: #562664;
+   
 }
 
 nav a {
@@ -106,6 +115,22 @@ footer a {
     
     
 } */
+
+.user-info a{
+  margin-left: 5%; 
+  color: black;
+  text-decoration: none; 
+  font-size: 20px;
+  
+/* use %, em, px. % and em are recommended. */
+}
+.user-info a:hover{
+  
+   color: #562664;
+/* use %, em, px. % and em are recommended. */
+}
+
+
 #status{
     text-align: center;
     width: 100%;
@@ -122,8 +147,8 @@ footer a {
 </style>
 <body>
    <header>
-       <div class="logo">EduPort</div>
-       <nav>
+       <div class="logo"><a href="/">EduPort</a></div>
+       <nav class="user-info">
            <a href="/login">Войти</a>
        </nav>
    </header>
