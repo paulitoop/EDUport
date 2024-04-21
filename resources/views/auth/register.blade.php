@@ -138,7 +138,7 @@ footer a {
             <div>
                 <label for="status">Статус</label>
                 <select id="status" name="status">
-                    <option value="user">Пользователь</option>
+                    <option value="user">Студент</option>
                     <option value="employer">Работодатель</option>
                     <option value="organizer">Организатор</option>
                 </select>

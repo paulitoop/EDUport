@@ -121,6 +121,8 @@ body {
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
+          
+              <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
            <?php
                $url = "https://favqs.com/api/qotd";
                $options = "r9u/R/7cSe2S7Am1gVfeZw==NxylCc0P9PR9KmfZ";
