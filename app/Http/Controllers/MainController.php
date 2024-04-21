@@ -74,5 +74,12 @@ class MainController extends Controller
         return view("zachetka");
     }
 
+    public function test()
+
+    {
+        // dd($content = $request->all());
+        return view("test");
+    }
+
     
 }

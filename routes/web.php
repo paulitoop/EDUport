@@ -32,9 +32,15 @@ Route::get('/resume', [MainController::class, 'resume']);
 Route::get('/newsert', [MainController::class, 'newsert']);
 Route::get('/programs', [MainController::class, 'programs']);
 Route::get('/zachetka', [MainController::class, 'zachetka']);
+Route::get('/test', [MainController::class, 'test']);
 Auth::routes();
 
 Route::post('store', [HomeController::class, 'store'])->name('store');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
-Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');;
+Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');
+
+
+Route::post('/location', [App\Http\Controllers\LocationController::class, 'store']);
+
+
