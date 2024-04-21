@@ -117,10 +117,11 @@ body {
 <body>
    <div class="container">
        <div class="header">
-           <img src="ava.jpg" alt="Student Profile">
+           <img src="ava_o.jpg" alt="Organizator Profile">
            <h1>{{$user = auth()->user()->name;}}</h1>
            <p>57/100 Рейтинг</p>
            <a href="#">Контакты</a>
+           <div>Название компании</div>
           
               <div>Статус пользователя: {{$status = auth()->user()->status}}</div>
            <?php
@@ -142,9 +143,10 @@ body {
            <div class="left-column">
                <h2>Активность</h2>
                <a href="/">Главная</a>
-               <a href="/zachetka">Цифровая зачетка</a>
-               <a href="/resume">Создание резюме</a>
-               <a href="#">Просмотр вакансий</a>
+               <a href="#">Добавить мероприятие</a>
+               <a href="/newsert">Добавить достижение для участника</a>
+               
+               
                <?PHP
                   use Illuminate\Support\Facades\Storage;
 
@@ -177,11 +179,9 @@ body {
                <h2>Персональные данные</h2>
                <p>Обновить профиль</p>
                <p>Редактировать профиль</p>
-               <a href="/newsert">Добавить достижение</a>
-               <h2>Достижения</h2>
-               <img src="ach1.png" alt="Achievement 1">
-               <img src="ach2.png" alt="Achievement 2">
-               <img src="ach3.png" alt="Achievement 3">
+               
+               
+               
                <h2>Помощь</h2>
                <p>Вопросы</p>
                <a href="#">FAQs</a>

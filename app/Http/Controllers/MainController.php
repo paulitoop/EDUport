@@ -28,6 +28,14 @@ class MainController extends Controller
     {
         return view("profile");
     }
+    public function profile_rab()
+    {
+        return view("profile_rab");
+    }
+    public function profile_org()
+    {
+        return view("profile_org");
+    }
     public function aut()
     {
         return view("aut");
