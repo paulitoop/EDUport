@@ -55,6 +55,7 @@ h1 {
         <div class="buttons">
             <a href="/eventsEdu" class="button">Образовательные</a>
             <a href="/eventsGo" class="button">Развлекательные</a>
+            <a href="#" class="button">Культурные</a>
         </div>
     </div>
 </body>
