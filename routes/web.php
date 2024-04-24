@@ -41,8 +41,8 @@ Route::get('/profile_rab', [MainController::class, 'profile_rab']);
 Route::get('/profile_org', [MainController::class, 'profile_org']);
 Route::post('store', [HomeController::class, 'store'])->name('store');
 
-Route::get('/profile', [MainController::class, 'redirectToProfile'])->name('redirect-to-profile');
-// Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
+Route::get('/profile_dir', [MainController::class, 'redirectToProfile'])->name('redirect-to-profile');
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('home');
 Route::post('/newsert', [App\Http\Controllers\CertificateController::class, 'store'])->name('newsert')->middleware('web');
 
 
